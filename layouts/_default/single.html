@@ -1,0 +1,16 @@
+{{ define "title" -}}
+{{ .Title }} &ndash; {{ .Site.Title }}
+{{- end }}
+
+{{ define "main" }}
+	<h1>{{ .Title }}</h1>
+	{{ .Content | safeHTML }}
+	<hr>
+	{{ partial "byline" . }}
+	{{ partial "related" . }}
+{{ end }}
+
+{{ define "footer" }}
+{{ partial "license" . }}
+{{ partial "credits" . }}
+{{ end }}

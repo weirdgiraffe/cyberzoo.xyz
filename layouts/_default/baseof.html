@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+	<head>
+		{{ .Hugo.Generator }}
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{{ block "title" . }} .Site.Title {{ end }}</title>
+		{{ with .Description }}
+		<meta name="description" content="{{ . }}">
+		{{ end }}
+		{{ if .RSSLink }}
+		<link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+		{{ end }}
+		<link rel="canonical" href="{{ .Permalink }}">
+		{{ if (isset .Params "prev") }}
+		<link rel="prev" href="{{ .Params.prev }}">
+		{{ end }}
+		{{ if (isset .Params "next") }}
+		<link rel="next" href="{{ .Params.next }}">
+		{{ end }}
+		<link rel="stylesheet" type="text/css" href="/css/hack.css">
+		<link rel="stylesheet" type="text/css" href="/css/dark.css">
+		<link rel="stylesheet" type="text/css" href="/css/pygments.css">
+		<link rel="stylesheet" type="text/css" href="/css/site.css">
+		<link rel="shortcut icon" type="image/png" href="/img/favicon.png">
+	</head>
+	<body class="hack dark main">
+		<div class="container">
+			<header>
+			{{ block "header" . }}
+			{{ partial "menu" . }}
+			{{ end }}
+			</header>
+			<main>
+			{{ block "main" . }}
+			{{ end }}
+			</main>
+		</div>
+		<footer>
+			<div class="container">
+			{{ block "footer" . }}
+			{{ partial "credits" . }}
+			{{ end }}
+			</div>
+		</footer>
+		{{ template "_internal/google_analytics_async.html" . }}
+	</body>
+</html>

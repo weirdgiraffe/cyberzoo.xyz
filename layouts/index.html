@@ -1,0 +1,21 @@
+{{ define "title" -}}
+{{ .Title }}
+{{- end }}
+
+{{ define "main" }}
+	<h1>{{ .Title }}</h1>
+
+	<h2>Most recent <a href="/post/">posts:</a></h2>
+	<ul>
+	{{ range first 10 (where .Data.Pages "Type" "in" "post") }}
+	<li><b><a href="{{ .Permalink }}">{{ .Title }}</a></b></li>
+	{{ end }}
+	</ul>
+
+	<h2>Most recent <a href="/note/">notes:</a></h2>
+	<ul>
+	{{ range first 10 (where .Data.Pages "Type" "in" "note") }}
+	<li><b><a href="{{ .Permalink }}">{{ .Title }}</a></b></li>
+	{{ end }}
+	</ul>
+{{ end }}

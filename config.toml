@@ -1,0 +1,33 @@
+title = "C4B3RZ00"
+baseurl = "https://cyberzoo.xyz/"
+languageCode = "en-US"
+googleAnalytics = "UA-89517855-1"
+enableRobotsTXT = true
+PygmentsCodeFences = true
+pygmentsuseclasses = true
+SectionPagesMenu = "main"
+
+[params]
+  description = "thoughts about technologies and other kind of internet an tech things by weirdgiraffe"
+  author = "weirdgiraffe"
+
+[menu]
+
+  [[menu.main]]
+    name = "Home"
+    weight = 0
+    identifier = "home"
+    url = "/"
+
+  [[menu.main]]
+    name = "Posts"
+    weight = 1
+    identifier = "post"
+    url = "/post/"
+
+  [[menu.main]]
+    name = "Notes"
+    weight = 2
+    identifier = "note"
+    url = "/note/"
+

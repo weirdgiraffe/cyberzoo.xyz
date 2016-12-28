@@ -1,0 +1,14 @@
+{{ define "title" -}}
+{{ .Title }} &ndash; {{ .Site.Title }}
+{{- end }}
+
+{{ define "main" }}
+	<h1>{{ .Site.Title }} / {{ .Title }}</h1>
+	{{ range (.Paginate .Data.Pages).Pages }}
+	<article>
+	<h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+	{{ .Content | safeHTML }}
+	</article>
+	{{ end }}
+	{{ partial "pagination" . }}
+{{ end }}
