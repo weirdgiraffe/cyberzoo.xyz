@@ -36,7 +36,7 @@ And I think also that everyone will update their certificates on 00:00 of 1th of
 be not like everyone and update mine at 04:00 on 3th of the month insted. For autorenew of certificates I've added this
 line into crontab:
 
-    0 4 2 * * /ust/sbin/certrenew
+    0 4 3 * * /ust/sbin/certrenew
 
 That's all folks
 
