@@ -50,8 +50,8 @@ html {
 	html {
 		font-size: 1rem;
 	}
-	.hack code {
-		font-size: 0.75rem !important;
+	.hack pre>code {
+		font-size: 0.75rem;
 	}
 	.container {
 		max-width: 50rem;
